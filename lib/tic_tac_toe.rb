@@ -94,15 +94,15 @@ class TicTacToe
   end 
   
   def draw?
-    full?(@board) && !won?(@board)
+    full? && !won?
   end 
   
   def over?
-    won?(@board) || draw?(@board) || full?(@board)
+    won? || draw? || full?
   end 
   
   def winner
-    if winning_combo = won?(@board)
+    if winning_combo = won?
       @board[winning_combo[0]]
     end 
   end
