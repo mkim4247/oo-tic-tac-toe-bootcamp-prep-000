@@ -38,28 +38,35 @@ class TicTacToe
     end 
   end
 
-
-
-
-
-def valid_move?(board, index)
-  if index.between?(0, 8) && position_taken?(board, index) == false 
-    return true 
-  else 
-    return false 
-  end
-end
-
-def turn_count(board)
-  counter = 0 
-  board.each do |space| 
-    if space == "X" or space == "O"
-      counter += 1
+  def valid_move?(index)
+      if index.between?(0, 8) && position_taken?(index) == false 
+        return true 
+      else 
+        return false 
+      end
     end
-  end 
-  return counter 
-end
 
+
+
+  
+  
+  # def turn_count(board)
+  #   counter = 0 
+  #   board.each do |space| 
+  #     if space == "X" or space == "O"
+  #       counter += 1
+  #     end
+  #   end 
+  #   return counter 
+  # end
+  
+  def current_player(board)
+    if turn_count(board) % 2 == 0
+      return "X"
+    else 
+      return "O"
+    end 
+  end 
 
 
 end 
